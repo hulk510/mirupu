@@ -15,6 +15,7 @@
 		12E903802AE6C6FE00C4B523 /* mirupuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E9037F2AE6C6FE00C4B523 /* mirupuTests.swift */; };
 		12E9038A2AE6C6FE00C4B523 /* mirupuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E903892AE6C6FE00C4B523 /* mirupuUITests.swift */; };
 		12E9038C2AE6C6FE00C4B523 /* mirupuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E9038B2AE6C6FE00C4B523 /* mirupuUITestsLaunchTests.swift */; };
+		12E903A22AE6D5BB00C4B523 /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E903A12AE6D5BB00C4B523 /* VideoPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		12E903852AE6C6FE00C4B523 /* mirupuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mirupuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E903892AE6C6FE00C4B523 /* mirupuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mirupuUITests.swift; sourceTree = "<group>"; };
 		12E9038B2AE6C6FE00C4B523 /* mirupuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mirupuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		12E903A12AE6D5BB00C4B523 /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				12E9036A2AE6C6FC00C4B523 /* mirupuApp.swift */,
 				12E9036C2AE6C6FC00C4B523 /* ContentView.swift */,
 				12E9036E2AE6C6FC00C4B523 /* Item.swift */,
+				12E903A12AE6D5BB00C4B523 /* VideoPlayer.swift */,
 				12E903702AE6C6FE00C4B523 /* Assets.xcassets */,
 				12E903722AE6C6FE00C4B523 /* mirupu.entitlements */,
 				12E903762AE6C6FE00C4B523 /* Info.plist */,
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12E903A22AE6D5BB00C4B523 /* VideoPlayer.swift in Sources */,
 				12E9036D2AE6C6FC00C4B523 /* ContentView.swift in Sources */,
 				12E9036F2AE6C6FC00C4B523 /* Item.swift in Sources */,
 				12E9036B2AE6C6FC00C4B523 /* mirupuApp.swift in Sources */,
