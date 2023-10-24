@@ -5,7 +5,7 @@
 //
 // Created by hulk510 on 2023/10/24
 // Copyright © 2023 gotoharuka . All rights reserved.
-//  
+//
 
 import SwiftUI
 import AVKit
@@ -17,6 +17,8 @@ class VideoViewModel: ObservableObject {
     // ビデオの選択肢を持つ配列
     let videoOptions = [
         URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")!,
+        URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4")!,
+        URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4")!,
     ]
 
     init() {
@@ -38,10 +40,12 @@ struct VideoPlayerView: View {
         VStack {
             if let videoURL = viewModel.videoURL {
                 VideoPlayer(player: player)
-                .onAppear {
-                    player = AVPlayer(url: videoURL)
-                    player?.play()
-                }
+                    .onAppear {
+                        setupPlayer(with: videoURL)
+                    }
+                    .onReceive(NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)) { _ in
+                        viewModel.isVideoEnded = true
+                    }
             }
 
             if viewModel.isVideoEnded {
@@ -54,5 +58,17 @@ struct VideoPlayerView: View {
                 }
             }
         }
+        .onChange(of: viewModel.videoURL) {
+            _, newVideoURL in
+            if let newURL = newVideoURL {
+                setupPlayer(with: newURL)
+            }
+        }
+    }
+
+    private func setupPlayer(with url: URL) {
+        print(url)
+        player = AVPlayer(url: url)
+        player?.play()
     }
 }
