@@ -17,5 +17,4 @@ struct VideoData {
 
 struct Choice {
     var title: String
-    var videoURL: URL
 }

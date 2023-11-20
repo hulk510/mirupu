@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		122C3C1C2AE810F0003E3AE0 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C3C1B2AE810F0003E3AE0 /* Video.swift */; };
+		122C3C1E2AE91CCF003E3AE0 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C3C1D2AE91CCF003E3AE0 /* ResultView.swift */; };
+		122C3C202AE93732003E3AE0 /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C3C1F2AE93732003E3AE0 /* ChoiceView.swift */; };
 		12E9036B2AE6C6FC00C4B523 /* mirupuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E9036A2AE6C6FC00C4B523 /* mirupuApp.swift */; };
 		12E9036D2AE6C6FC00C4B523 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E9036C2AE6C6FC00C4B523 /* ContentView.swift */; };
 		12E903712AE6C6FE00C4B523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E903702AE6C6FE00C4B523 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		122C3C1B2AE810F0003E3AE0 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		122C3C1D2AE91CCF003E3AE0 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		122C3C1F2AE93732003E3AE0 /* ChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceView.swift; sourceTree = "<group>"; };
 		12E903672AE6C6FC00C4B523 /* mirupu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mirupu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E9036A2AE6C6FC00C4B523 /* mirupuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mirupuApp.swift; sourceTree = "<group>"; };
 		12E9036C2AE6C6FC00C4B523 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				12E9036A2AE6C6FC00C4B523 /* mirupuApp.swift */,
 				12E9036C2AE6C6FC00C4B523 /* ContentView.swift */,
 				12E903A12AE6D5BB00C4B523 /* VideoPlayer.swift */,
+				122C3C1F2AE93732003E3AE0 /* ChoiceView.swift */,
+				122C3C1D2AE91CCF003E3AE0 /* ResultView.swift */,
 				122C3C1B2AE810F0003E3AE0 /* Video.swift */,
 				12E903702AE6C6FE00C4B523 /* Assets.xcassets */,
 				12E903722AE6C6FE00C4B523 /* mirupu.entitlements */,
@@ -268,7 +274,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				12E903A22AE6D5BB00C4B523 /* VideoPlayer.swift in Sources */,
+				122C3C202AE93732003E3AE0 /* ChoiceView.swift in Sources */,
 				122C3C1C2AE810F0003E3AE0 /* Video.swift in Sources */,
+				122C3C1E2AE91CCF003E3AE0 /* ResultView.swift in Sources */,
 				12E9036D2AE6C6FC00C4B523 /* ContentView.swift in Sources */,
 				12E9036B2AE6C6FC00C4B523 /* mirupuApp.swift in Sources */,
 			);

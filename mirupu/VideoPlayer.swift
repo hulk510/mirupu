@@ -14,9 +14,9 @@ class VideoViewModel: ObservableObject {
     @Published var isVideoEnded = false
 
     // ビデオの選択肢を持つ配列
-    @Published var videoData: VideoData = VideoData(mainVideoURL: URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")!,
-                                                    choice1: .init(title: "選択肢１", videoURL: URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4")!),
-                                                    choice2: .init(title: "選択肢2", videoURL: URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4")!)
+    @Published var videoData: VideoData = VideoData(mainVideoURL: URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4")!,
+                                                    choice1: .init(title: "選択肢１"),
+                                                    choice2: .init(title: "選択肢2")
     )
 }
 
@@ -28,21 +28,11 @@ struct VideoPlayerView: View {
     var body: some View {
         VStack {
             if viewModel.isVideoEnded {
-                Text("Choose a video:")
-                Button(viewModel.videoData.choice1.title) {
-                    setupPlayer(with: viewModel.videoData.choice1.videoURL, isLast: true)
-                }
-                Button(viewModel.videoData.choice2.title) {
-                    setupPlayer(with: viewModel.videoData.choice2.videoURL, isLast: true)
-                }
+                ChoiceView(title: "test", choice1: viewModel.videoData.choice1, choice2: viewModel.videoData.choice2)
             } else {
                 VideoPlayer(player: player)
                     .onReceive(NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)) { _ in
-                        if isFinish {
-                            setupPlayer(with: viewModel.videoData.mainVideoURL)
-                        } else {
                             viewModel.isVideoEnded = true
-                        }
                     }
             }
         }
@@ -51,10 +41,9 @@ struct VideoPlayerView: View {
         }
     }
 
-    private func setupPlayer(with url: URL, isLast: Bool = false) {
+    private func setupPlayer(with url: URL) {
         player = AVPlayer(url: url)
         player?.play()
         viewModel.isVideoEnded = false
-        isFinish = isLast
     }
 }
