@@ -24,6 +24,7 @@ struct VideoPlayerView: View {
     @StateObject private var viewModel = VideoViewModel()
     @State private var player: AVPlayer?
     @State private var isFinish: Bool = false
+    @State var isPlaying: Bool = false
 
     var body: some View {
         VStack {
@@ -31,9 +32,24 @@ struct VideoPlayerView: View {
                 ChoiceView(title: "test", choice1: viewModel.videoData.choice1, choice2: viewModel.videoData.choice2)
             } else {
                 VideoPlayer(player: player)
-                    .onReceive(NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)) { _ in
-                            viewModel.isVideoEnded = true
+                    .toolbar {
+                        ToolbarItem(placement: .principal) {
+                            Text("残り5秒!")
+                                .font(.title2)
+                        }
                     }
+                    .onReceive(NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)) { _ in
+//                        viewModel.isVideoEnded = true
+                    }
+                    .ignoresSafeArea()
+                Button {
+                    isPlaying ? player?.pause() : player?.play()
+                    isPlaying.toggle()
+                    player?.seek(to: .zero)
+                } label: {
+                    Image(systemName: isPlaying ? "stop" : "play")
+                        .padding()
+                }
             }
         }
         .onAppear {
@@ -46,4 +62,8 @@ struct VideoPlayerView: View {
         player?.play()
         viewModel.isVideoEnded = false
     }
+}
+
+#Preview {
+    VideoPlayerView()
 }
